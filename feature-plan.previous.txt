@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "current_feature": "fastapi_backend",
+  "features": [
+    {
+      "id": "fastapi_backend",
+      "title": "FastAPI backend service",
+      "status": "done",
+      "acceptance": ["Provides a /hello endpoint returning a JSON with message"],
+      "implementation": ["src/fastapi_app.py"],
+      "tests": ["tests/fastapi_test.py"]
+    },
+    {
+      "id": "react_ui",
+      "title": "React UI",
+      "status": "planned",
+      "acceptance": ["Serves a static HTML page that fetches /hello and displays the message"],
+      "implementation": [],
+      "tests": []
+    }
+  ]
+}
