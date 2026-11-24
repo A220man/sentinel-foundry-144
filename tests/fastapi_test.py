@@ -16,3 +16,10 @@ def test_health():
     assert response.status_code == 200
     data = response.json()
     assert data == {"status": "ok"}
+
+
+def test_status():
+    response = client.get("/status")
+    assert response.status_code == 200
+    data = response.json()
+    assert data == {"version": "1.1.0"}
