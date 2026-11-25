@@ -8,3 +8,10 @@ def test_hello():
     assert response.status_code == 200
     data = response.json()
     assert data == {"message": "Hello, world!"}
+
+
+def test_health():
+    response = client.get("/health")
+    assert response.status_code == 200
+    data = response.json()
+    assert data == {"status": "healthy", "service": "sentinel-foundry-144"}
