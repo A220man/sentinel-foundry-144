@@ -23,3 +23,14 @@ def test_status():
     assert response.status_code == 200
     data = response.json()
     assert data == {"version": "1.1.0"}
+
+
+def test_metrics():
+    response = client.get("/metrics")
+    assert response.status_code == 200
+    data = response.json()
+    assert data == {
+        "endpoint": "/metrics",
+        "method": "GET",
+        "status": "healthy",
+    }
