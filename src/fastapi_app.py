@@ -16,3 +16,12 @@ async def health():
 @app.get("/status")
 async def status():
     return {"version": "1.1.0"}
+
+
+@app.get("/metrics")
+async def metrics():
+    return {
+        "endpoint": "/metrics",
+        "method": "GET",
+        "status": "healthy",
+    }
